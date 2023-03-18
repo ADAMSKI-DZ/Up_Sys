@@ -1,0 +1,18 @@
+/*--- Fonts import ---*/
+
+@font-face {
+  font-family: "Gratelos";
+  src: url(../../fonts/Gratelos/GratelosDisplay.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto-regular";
+  src: url(../../fonts/Roboto/Roboto-Regular.ttf) format(truetype);
+}
+@font-face {
+  font-family: "Roboto-light";
+  src: url(../../fonts/Roboto/Roboto-Light.ttf) format(truetype);
+}
+@font-face {
+  font-family: "Roboto-bold";
+  src: url(../../fonts/Roboto/Roboto-Bold.ttf) format(truetype);
+}

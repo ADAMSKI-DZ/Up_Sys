@@ -1,0 +1,307 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--dark-purple);
+}
+
+/*--- Title bar / Top nav ---*/
+
+nav.top-title {
+  height: 10%;
+  width: 100%;
+  background-color: var(--more-dark-purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem 0rem 1rem;
+  -webkit-app-region: drag;
+}
+.logo {
+  width: 2rem;
+}
+.logo img {
+  width: 100%;
+}
+.title-name {
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: "Roboto-bold";
+}
+.tasks {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 4rem;
+  -webkit-app-region: none;
+}
+.tasks .close-btn {
+  width: 1rem;
+  cursor: pointer;
+}
+.tasks .close-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.tasks .close-btn:hover > svg path {
+  fill: var(--purple);
+}
+.tasks .close-btn svg {
+  width: 100%;
+  height: 100%;
+}
+.tasks .minimize-btn {
+  width: 1rem;
+  cursor: pointer;
+}
+.tasks .minimize-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.tasks .minimize-btn:hover > svg path {
+  fill: var(--purple);
+}
+.tasks .minimize-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/*--- Main content / Home ---*/
+
+.main-content {
+  width: 100%;
+  height: 90%;
+  position: relative;
+}
+.home {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.top {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .top h1 {
+  font-family: "Gratelos";
+  font-size: 2.5rem;
+}
+.home .top p {
+  margin-bottom: 2rem;
+  position: relative;
+  bottom: 1rem;
+}
+.bottom {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home .bottom .check-update-btn {
+  background-color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 6rem;
+  padding: 0.7rem 2rem 0.7rem 3.3rem;
+  border-radius: 0.7rem;
+  font-family: "Gratelos";
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  transition: all 200ms ease-in-out;
+}
+
+.home .bottom .check-update-btn svg {
+  height: 1.3rem;
+  position: absolute;
+  left: -1.5rem;
+  top: 0.8rem;
+}
+.home .bottom .check-update-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.home .bottom .check-update-btn:hover {
+  background-color: transparent;
+  background-color: var(--white);
+  color: var(--purple);
+}
+.home .bottom .check-update-btn:hover > svg path {
+  fill: var(--purple);
+}
+
+/*--- Main content / Loading animaton ---*/
+.update-loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-loading.hide {
+  display: none;
+}
+.update-loading img {
+  mix-blend-mode: screen;
+  width: 25%;
+}
+
+/*--- Main content / Update available ---*/
+.update-available {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.update-available .top {
+  height: 50%;
+  width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.update-available .bottom {
+  height: 50%;
+  width: 100%;
+}
+.update-available .top h1 {
+  font-family: "Gratelos";
+  font-size: 2.5rem;
+}
+.update-available .top h1 svg {
+  width: 2rem;
+  height: 2rem;
+}
+.update-app-btn {
+  background-color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 6rem;
+  padding: 0.7rem 2rem 0.7rem 3.3rem;
+  border-radius: 0.7rem;
+  font-family: "Gratelos";
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  transition: all 200ms ease-in-out;
+}
+.update-app-btn svg {
+  height: 1.3rem;
+  width: 1.3rem;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.8rem;
+}
+.update-app-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.update-app-btn:hover {
+  background-color: transparent;
+  background-color: var(--white);
+  color: var(--purple);
+}
+.update-app-btn:hover > svg path {
+  fill: var(--purple);
+}
+.update-available .bottom p {
+  font-family: "Roboto-regular";
+}
+.update-available .back-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+.update-available .back-btn svg {
+  width: 3rem;
+  height: 100%;
+}
+.update-available .back-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.update-available .back-btn:hover {
+  background-color: #fff;
+}
+.update-available .back-btn:hover > svg path {
+  fill: var(--purple);
+}
+.update-available.hide {
+  display: none;
+}
+
+/*--- Main content / No update found ---*/
+.no-update-found {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.no-update-found h1 {
+  font-family: "Gratelos";
+  font-size: 2.5rem;
+}
+.no-update-found h1 svg {
+  width: 2rem;
+  height: 2rem;
+}
+.no-update-desc {
+  line-height: 2rem;
+  font-family: "Roboto-regular";
+}
+
+.no-update-back-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+.no-update-back-btn svg {
+  width: 3rem;
+  height: 100%;
+}
+.no-update-back-btn svg path {
+  transition: all 200ms ease-in-out;
+}
+.no-update-back-btn:hover {
+  background-color: #fff;
+}
+.no-update-back-btn:hover > svg path {
+  fill: var(--purple);
+}
+.no-update-found.hide {
+  display: none;
+}
