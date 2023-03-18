@@ -78,4 +78,6 @@ noUpdateBackBtn.addEventListener("click", () => {
 
 ipc.on("no_update_available", () => {
   noUpdateFound.classList.remove("hide");
+  console.log("no update found");
+  updateLoading.classList.add("hide");
 });

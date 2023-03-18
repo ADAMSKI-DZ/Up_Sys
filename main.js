@@ -3,19 +3,12 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const ipc = ipcMain;
-const liveReload = require("electron-reload");
 const { autoUpdater } = require("electron-updater");
 const { title } = require("process");
 
 /*--- Assigning app title --- */
 
 const appTitle = "Up_sys";
-
-/*--- live reload function --- */
-
-liveReload(__dirname, {
-  electron: require(`${__dirname}/node_modules/electron`),
-});
 
 /*--- Configuring window --- */
 
