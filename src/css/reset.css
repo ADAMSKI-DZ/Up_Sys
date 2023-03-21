@@ -18,3 +18,10 @@ a {
   text-decoration: none;
   color: var(--white);
 }
+.hide {
+  display: none !important;
+}
+.top,
+.bottom {
+  z-index: 2;
+}

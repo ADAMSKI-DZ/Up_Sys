@@ -4,7 +4,6 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const ipc = ipcMain;
 const { autoUpdater } = require("electron-updater");
-const { title } = require("process");
 
 /*--- Assigning app title --- */
 
@@ -47,6 +46,7 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+  autoUpdater.quitAndInstall();
 });
 
 /*--- Close btn and Minimize btn Function --- */
@@ -78,10 +78,17 @@ autoUpdater.on("download-progress", (progressObj) => {
     speed: progressObj.bytesPerSecond,
   });
 });
+autoUpdater.on("update-downloaded", () => {
+  win.webContents.send("update_downloaded");
+});
 autoUpdater.on("update-not-available", () => {
   win.webContents.send("no_update_available");
 });
 
 ipc.on("install_update", () => {
   autoUpdater.downloadUpdate();
+});
+
+ipc.on("restart_the_app", () => {
+  autoUpdater.quitAndInstall();
 });
